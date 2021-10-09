@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import colors from "../constants/colors";
 import TwIcon, { IconType } from "./TwIcon";
 import "./twButton.css";
+import TwText from "./TwText";
+import TwSpace from "./TwSpace";
 
 export type ButtonType =
   | "primary"
@@ -42,14 +44,8 @@ export default function TwButton({
       {...props}
     >
       {Icon && <TwIcon Icon={Icon} color={handleColor(type)} />}
-      {text && <span style={styles({ type }).text}>{text}</span>}
+      {Icon && text && <TwSpace isVertical={false} size={16} />}
+      {text && <TwText>{text}</TwText>}
     </a>
   );
 }
-
-const styles = ({ type }: any) => ({
-  container: {},
-  text: {
-    margin: "0 16px",
-  },
-});

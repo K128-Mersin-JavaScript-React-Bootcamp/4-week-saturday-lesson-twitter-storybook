@@ -2,6 +2,7 @@
 import TwNav from "../components/TwNav";
 import TwHairline from "../components/TwHairline";
 import TwSpace from "../components/TwSpace";
+import TwHeader from "../components/TwHeader";
 
 interface Props {}
 
@@ -11,6 +12,7 @@ export default function HomePage(props: Props) {
       <TwNav />
       <TwSpace isVertical={false} size={30} />
       <TwHairline isVertical={true} />
+      <TwHeader />
     </div>
   );
 }

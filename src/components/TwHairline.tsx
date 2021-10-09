@@ -9,8 +9,8 @@ export default function TwHairline({ isVertical = false, ...props }: Props) {
   return (
     <div
       style={{
-        height: isVertical ? "100vh" : "2px",
-        width: isVertical ? "2px" : "100vh",
+        height: isVertical ? "100vh" : "1px",
+        width: isVertical ? "1px" : "initial",
         backgroundColor: colors.hairline,
       }}
       {...props}
