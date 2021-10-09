@@ -2,15 +2,16 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import TwIcon from './TwIcon';
-import Home from '../assets/home.svg';
-import HomeRed from '../assets/homeRed.svg';
-import HomePrimary from '../assets/homePrimary.svg';
-import HashTag from '../assets/hashtag.svg';
-import Notification from '../assets/notification.svg';
-import Message from '../assets/message.svg';
-import Profile from '../assets/profile.svg';
-import More from '../assets/more.svg';
-import NewTweet from '../assets/newTweet.svg';
+import { ReactComponent as Home } from '../assets/home.svg';
+import { ReactComponent as HomeRed } from '../assets/homeRed.svg';
+import { ReactComponent as HomePrimary } from '../assets/homePrimary.svg';
+import { ReactComponent as HashTag } from '../assets/hashtag.svg';
+import { ReactComponent as Notification } from '../assets/notification.svg';
+import { ReactComponent as Message } from '../assets/message.svg';
+import { ReactComponent as Profile } from '../assets/profile.svg';
+import { ReactComponent as More } from '../assets/more.svg';
+import { ReactComponent as NewTweet } from '../assets/newTweet.svg';
+import colors from '../constants/colors';
 
 export default {
   title: 'TwIcon/Icon',
@@ -21,56 +22,38 @@ const Template: ComponentStory<typeof TwIcon> = (args) => <TwIcon {...args} />;
 
 export const HomeIcon = Template.bind({});
 HomeIcon.args = {
-  src: Home
-};
-export const HomeRedIcon = Template.bind({});
-HomeRedIcon.args = {
-  src: Message
+  Icon: Home,
+  color: colors.primary
 };
 export const HomePrimaryIcon = Template.bind({});
 HomePrimaryIcon.args = {
-  src: Message
+  Icon: Message,
+  color: colors.background
 };
 
 export const HashTagIcon = Template.bind({});
 HashTagIcon.args = {
-  src: HashTag,
+  Icon: HashTag,
 };
 
 export const NotificationIcon = Template.bind({});
 NotificationIcon.args = {
-  src: Notification,
+  Icon: Notification,
 };
 export const MessageIcon = Template.bind({});
 MessageIcon.args = {
-  src: Message,
+  Icon: Message,
 };
 export const ProfileIcon = Template.bind({});
 ProfileIcon.args = {
-  src: Profile,
+  Icon: Profile,
 };
 export const MoreIcon = Template.bind({});
 MoreIcon.args = {
-  src: More,
+  Icon: More,
 };
 export const NewTweetIcon = Template.bind({});
 NewTweetIcon.args = {
-  src: NewTweet,
+  Icon: NewTweet,
 };
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   // label: 'Button',
-// };
-
-// export const Large = Template.bind({});
-// Large.args = {
-//   // size: 'large',
-//   // label: 'Button',
-// };
-
-// export const Small = Template.bind({});
-// Small.args = {
-//   // size: 'small',
-//   // label: 'Button',
-// };
