@@ -1,9 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import TwNav from "./TwNav";
+import TwNav, { NavObject } from "./TwNav";
 import { ReactComponent as Home } from "../assets/home.svg";
-import { ReactComponent as HomeRed } from "../assets/homeRed.svg";
-import { ReactComponent as HomePrimary } from "../assets/homePrimary.svg";
 import { ReactComponent as HashTag } from "../assets/hashtag.svg";
 import { ReactComponent as Notification } from "../assets/notification.svg";
 import { ReactComponent as Message } from "../assets/message.svg";
@@ -20,28 +18,50 @@ export default {
 
 const Template: ComponentStory<typeof TwNav> = (args) => <TwNav {...args} />;
 
+const elements: NavObject[] = [
+  {
+    type: "primary",
+    Icon: Home,
+    text: "Anasayfa",
+  },
+  {
+    type: "primary",
+    Icon: HashTag,
+    text: "Keşfet",
+  },
+  {
+    type: "primary",
+    Icon: Notification,
+    text: "Bildirimler",
+  },
+  {
+    type: "primary",
+    Icon: Message,
+    text: "Mesajlar",
+  },
+  {
+    type: "primary",
+    Icon: Bookmark,
+    text: "Yer işaretleri",
+  },
+  {
+    type: "primary",
+    Icon: List,
+    text: "Listeler",
+  },
+  {
+    type: "primary",
+    Icon: Profile,
+    text: "Profil",
+  },
+  {
+    type: "primary",
+    Icon: More,
+    text: "Daha fazla",
+  },
+];
+
 export const PrimaryNav = Template.bind({});
 PrimaryNav.args = {
-  elements: [
-    {
-      type: "primary",
-      Icon: Home,
-      text: "Anasayfa",
-    },
-    {
-      type: "primary",
-      Icon: HashTag,
-      text: "Keşfet",
-    },
-    {
-      type: "primary",
-      Icon: Home,
-      text: "Anasayfa",
-    },
-    {
-      type: "primary",
-      Icon: Home,
-      text: "Anasayfa",
-    },
-  ],
+  elements: elements.map((e) => ({ ...e, type: "secondary" })),
 };

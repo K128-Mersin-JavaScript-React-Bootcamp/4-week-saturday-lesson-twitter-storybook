@@ -1,0 +1,46 @@
+:root {
+  --primary: #1d9bf0;
+  --primaryDark: #2766cc;
+  --background: #fff;
+  --text: #000;
+  --danger: #e74c3c;
+  --warning: #e67e22;
+  --success: #2ecc71;
+}
+
+.twButton {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 26px;
+  width: fit-content;
+  height: 52px;
+  padding: 0 32px;
+  font-family: Helvetica, sans-serif;
+}
+
+.twButton--primary {
+  background-color: var(--primary);
+  color: var(--background);
+}
+.twButton--secondary {
+  background-color: var(--background);
+  color: var(--text);
+}
+.twButton--success {
+  background-color: var(--success);
+  color: var(--background);
+}
+.twButton--warning {
+  background-color: var(--warning);
+  color: var(--background);
+}
+.twButton--danger {
+  background-color: var(--danger);
+  color: var(--background);
+}
+
+.twButton:hover {
+  filter: brightness(90%);
+}

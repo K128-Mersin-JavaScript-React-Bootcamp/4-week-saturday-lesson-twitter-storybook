@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import colors from "../constants/colors";
 import TwIcon, { IconType } from "./TwIcon";
+import "./twButton.css";
 
 export type ButtonType =
   | "primary"
@@ -21,17 +22,12 @@ export default function TwButton({
   text,
   ...props
 }: Props) {
-  const [hover, setHover] = useState(false);
-  const toggleHover = () => {
-    setHover(!hover);
-  };
   return (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
       href="#"
-      style={styles({ type, hover }).container}
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
+      // style={styles({ type }).container}
+      className={["twButton", `twButton--${type}`].join(" ")}
       {...props}
     >
       {Icon && (
@@ -45,43 +41,21 @@ export default function TwButton({
   );
 }
 
-const handleStyle = ({ type, hover }: any) => {
-  if (hover) {
-    return colors.primaryDark;
-  }
-
-  switch (type) {
-    case "primary":
-      return colors.primary;
-    case "secondary":
-      return colors.background;
-    case "warning":
-      return colors.warning;
-    case "danger":
-      return colors.danger;
-    case "success":
-      return colors.success;
-    default:
-      return colors.background;
-  }
-};
-
-const styles = ({ type, hover }: any) => ({
+const styles = ({ type }: any) => ({
   container: {
-    textDecoration: "none",
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    borderRadius: "26px",
-    width: "212px",
-    height: "52px",
-    padding: "0 32px",
-    fontFamily: "Helvetica, sans-serif",
-    backgroundColor: handleStyle({ type, hover }),
-    color: type === "secondary" ? colors.text : colors.background,
-    border: type === "secondary" ? `2px solid ${colors.text}` : "0px",
+    // textDecoration: "none",
+    // display: "flex",
+    // justifyContent: "flex-start",
+    // alignItems: "center",
+    // borderRadius: "26px",
+    // width: "212px",
+    // height: "52px",
+    // padding: "0 32px",
+    // fontFamily: "Helvetica, sans-serif",
+    // backgroundColor: handleStyle({ type }),
+    // color: type === "secondary" ? colors.text : colors.background,
   },
   text: {
-    margin: "0 16px 0 20px",
+    margin: "0 16px",
   },
 });

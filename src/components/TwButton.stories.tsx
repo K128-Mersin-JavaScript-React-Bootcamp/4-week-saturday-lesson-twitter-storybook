@@ -15,51 +15,31 @@ const Template: ComponentStory<typeof TwButton> = (args) => (
 
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = {
-  text: "Tweetle",
-  type: "primary",
-};
-export const HomeButton = Template.bind({});
-HomeButton.args = {
   Icon: Home,
   text: "Tweetle",
   type: "primary",
 };
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
+  Icon: Home,
   text: "Tweetle",
   type: "secondary",
-};
-export const DangerButton = Template.bind({});
-DangerButton.args = {
-  text: "Tweetle",
-  type: "danger",
-  Icon: Message,
 };
 export const WarningButton = Template.bind({});
 WarningButton.args = {
   text: "Tweetle",
   type: "warning",
-  Icon: Message,
+  Icon: Home,
 };
-export const IconButton = Template.bind({});
-IconButton.args = {
+export const DangerButton = Template.bind({});
+DangerButton.args = {
   text: "Tweetle",
-  type: "secondary",
+  type: "danger",
+  Icon: Home,
 };
-
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   // label: 'Button',
-// };
-
-// export const Large = Template.bind({});
-// Large.args = {
-//   // size: 'large',
-//   // label: 'Button',
-// };
-
-// export const Small = Template.bind({});
-// Small.args = {
-//   // size: 'small',
-//   // label: 'Button',
-// };
+export const SuccessButton = Template.bind({});
+SuccessButton.args = {
+  text: "Tweetle",
+  type: "success",
+  Icon: Home,
+};
