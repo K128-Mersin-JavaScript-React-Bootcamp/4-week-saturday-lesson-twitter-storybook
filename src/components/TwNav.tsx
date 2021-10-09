@@ -3,6 +3,7 @@ import colors from "../constants/colors";
 import TwIcon, { IconType } from "./TwIcon";
 import TwButton, { ButtonType } from "./TwButton";
 import { HashTagIcon } from "./TwIcon.stories";
+import { ReactComponent as Twitter } from "../assets/twitter.svg";
 import { ReactComponent as Home } from "../assets/home.svg";
 import { ReactComponent as HomeRed } from "../assets/homeRed.svg";
 import { ReactComponent as HomePrimary } from "../assets/homePrimary.svg";
@@ -17,16 +18,67 @@ import { ReactComponent as List } from "../assets/list.svg";
 import TwSpace from "./TwSpace";
 
 export interface NavObject {
-  text: string;
+  text?: string;
   type?: ButtonType;
-  Icon: IconType;
+  Icon?: IconType;
 }
 
 interface Props {
   elements?: NavObject[];
 }
 
-export default function TwNav({ elements, ...props }: Props) {
+const defaultElements: NavObject[] = [
+  {
+    type: "brand",
+    Icon: Twitter,
+  },
+  {
+    type: "secondary",
+    Icon: Home,
+    text: "Anasayfa",
+  },
+  {
+    type: "secondary",
+    Icon: HashTag,
+    text: "Keşfet",
+  },
+  {
+    type: "secondary",
+    Icon: Notification,
+    text: "Bildirimler",
+  },
+  {
+    type: "secondary",
+    Icon: Message,
+    text: "Mesajlar",
+  },
+  {
+    type: "secondary",
+    Icon: Bookmark,
+    text: "Yer işaretleri",
+  },
+  {
+    type: "secondary",
+    Icon: List,
+    text: "Listeler",
+  },
+  {
+    type: "secondary",
+    Icon: Profile,
+    text: "Profil",
+  },
+  {
+    type: "secondary",
+    Icon: More,
+    text: "Daha fazla",
+  },
+  {
+    type: "primary",
+    text: "Tweetle",
+  },
+];
+
+export default function TwNav({ elements = defaultElements, ...props }: Props) {
   return (
     <div>
       {elements?.map((e) => (
@@ -35,21 +87,6 @@ export default function TwNav({ elements, ...props }: Props) {
           <TwSpace />
         </>
       ))}
-      {/* <TwButton text="Anasayfa" Icon={Home} type={props.type} />
-      <TwSpace />
-      <TwButton text="Keşfet" Icon={HashTag} type={props.type} />
-      <TwSpace />
-      <TwButton text="Bildirimler" Icon={Notification} type={props.type} />
-      <TwSpace />
-      <TwButton text="Mesajlar" Icon={Message} type={props.type} />
-      <TwSpace />
-      <TwButton text="Yer işaretleri" Icon={Bookmark} type={props.type} />
-      <TwSpace />
-      <TwButton text="Listeler" Icon={List} type={props.type} />
-      <TwSpace />
-      <TwButton text="Profil" Icon={Profile} type={props.type} />
-      <TwSpace />
-      <TwButton text="Daha fazla" Icon={More} type={props.type} /> */}
     </div>
   );
 }

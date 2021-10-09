@@ -6,6 +6,7 @@ const colors = {
   danger: '#e74c3c',
   warning: '#e67e22',
   success: '#2ecc71',
+  hairline: '#eff3f4',
 }
 
 export default colors;

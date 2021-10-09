@@ -10,6 +10,7 @@ import { ReactComponent as More } from "../assets/more.svg";
 import { ReactComponent as NewTweet } from "../assets/newTweet.svg";
 import { ReactComponent as Bookmark } from "../assets/bookmark.svg";
 import { ReactComponent as List } from "../assets/list.svg";
+import { ReactComponent as Twitter } from "../assets/twitter.svg";
 
 export default {
   title: "Twitter/Nav",
@@ -18,50 +19,5 @@ export default {
 
 const Template: ComponentStory<typeof TwNav> = (args) => <TwNav {...args} />;
 
-const elements: NavObject[] = [
-  {
-    type: "primary",
-    Icon: Home,
-    text: "Anasayfa",
-  },
-  {
-    type: "primary",
-    Icon: HashTag,
-    text: "Keşfet",
-  },
-  {
-    type: "primary",
-    Icon: Notification,
-    text: "Bildirimler",
-  },
-  {
-    type: "primary",
-    Icon: Message,
-    text: "Mesajlar",
-  },
-  {
-    type: "primary",
-    Icon: Bookmark,
-    text: "Yer işaretleri",
-  },
-  {
-    type: "primary",
-    Icon: List,
-    text: "Listeler",
-  },
-  {
-    type: "primary",
-    Icon: Profile,
-    text: "Profil",
-  },
-  {
-    type: "primary",
-    Icon: More,
-    text: "Daha fazla",
-  },
-];
-
 export const PrimaryNav = Template.bind({});
-PrimaryNav.args = {
-  elements: elements.map((e) => ({ ...e, type: "secondary" })),
-};
+PrimaryNav.args = {};
