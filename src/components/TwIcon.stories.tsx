@@ -1,10 +1,7 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import TwIcon from "./TwIcon";
 import { ReactComponent as Home } from "../assets/home.svg";
-import { ReactComponent as HomeRed } from "../assets/homeRed.svg";
-import { ReactComponent as HomePrimary } from "../assets/homePrimary.svg";
 import { ReactComponent as HashTag } from "../assets/hashtag.svg";
 import { ReactComponent as Notification } from "../assets/notification.svg";
 import { ReactComponent as Message } from "../assets/message.svg";
